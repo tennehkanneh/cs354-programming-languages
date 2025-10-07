@@ -1,20 +1,29 @@
-;; Duplicates a single element 'count' times
-(define (duper element count)
-    (if (= count 0)
-        '()
-        (cons element (duper element (- count 1)))))
+;; duplicate `element` count times by consing onto `tail`
+(define (duper element count tail)
+  (if (= count 0)
+    tail
+    (cons element (duper element (- count 1) tail))))
 
-;; Main function: super-duper
+
 (define (super-duper source count)
   (cond
+    ;; If source is not a list, return it immediately (no duplication).
     ((not (list? source)) source)
+    ;; Empty list -> empty list
     ((null? source) '())
+    ;; Recursive case:
     (else
-     (let loop ((dups (duper (super-duper (car source) count) count))
-                (rest (super-duper (cdr source) count)))
-       (if (null? dups)
-           rest
-           (cons (car dups) (loop (cdr dups) rest)))))))
+        (let ((rest-result (super-duper (cdr source) count))
+            (first (car source)))
+       ;; If the first element is itself a list, process it recursively
+       ;; (this is the "inner" recursion). Then prepend `count` copies
+       ;; of that processed element before rest-result (outer recursion).
+       (duper 
+            (if (list? first)
+                (super-duper first count)
+                first)
+            count
+            rest-result)))))
 
 
 ;; Example usage
