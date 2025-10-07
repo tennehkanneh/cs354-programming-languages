@@ -1,0 +1,10 @@
+expr        :   expr mult_op term
+            |   term
+
+term        :   term mult
+
+
+factor      :
+
+
+mult_op     : '*'
