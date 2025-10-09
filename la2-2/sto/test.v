@@ -7,7 +7,7 @@ module test_store#(BITS=32)();
     reg ie, oe;		            // input/output enable
     
     
-    Store#(.BITS(BITS), .FIRST(0))
+    Sto#(.BITS(BITS), .FIRST(0))
         m(.CLK(clk),
         .INP(inp),     .IE(ie),
         .OUT(out),     .OE(oe),

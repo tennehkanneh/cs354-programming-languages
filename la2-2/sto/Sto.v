@@ -1,4 +1,4 @@
-module Store#(BITS=32, FIRST=0)(
+module Sto#(BITS=32, FIRST=0)(
    input CLK,
    input [BITS-1:0]INP,
    output reg [BITS-1:0]OUT,
