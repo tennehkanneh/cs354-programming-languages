@@ -1,3 +1,5 @@
+// CS354 - Programming Languages Class Counter Module
+
 module Multiplexer#(BITS='d32)(
     input CLK,
     input [BITS-1:0]A, B,

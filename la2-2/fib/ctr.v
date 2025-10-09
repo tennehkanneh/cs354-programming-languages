@@ -1,3 +1,5 @@
+// CS354 - Programming Languages Class Counter Module
+
 module Counter#(BITS='d32)(
     input CLK,
     input [BITS-1:0]INP,        // unsigned

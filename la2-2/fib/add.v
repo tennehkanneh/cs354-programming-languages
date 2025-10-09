@@ -1,3 +1,5 @@
+// CS354 - Programming Languages Class Multipy Module
+
 module Add#(BITS='d32)(
    input CLK,
    input [BITS-1:0]A, B,
@@ -7,7 +9,7 @@ module Add#(BITS='d32)(
 
    reg [BITS-1:0]a, b;
 
-   assign Y=a+b;
+   assign Y=a+b; // modifed to do addition
 
    enum {StINIT,StA,StB,StOE} state;
 
