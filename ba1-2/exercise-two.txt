@@ -1,0 +1,34 @@
+STRING ONE: -x*2
+
+
+expr    : expr mult_op factor
+        | factor
+
+factor  : id
+        | number
+        | ’-’ factor
+        | '(' expr ')'
+
+mult_op : ’*’
+        | ’/’
+
+
+
+STRING TWO: -(x*-2)
+
+expr    : expr add_op term
+        | term
+
+term    : term mult_op factor 
+        | factor
+
+factor  : id
+        | number
+        | ’-’ factor
+        | '(' expr ')'
+
+mult_op : ’*’
+        | ’/’
+
+add_op  : '+'
+        | '-'
