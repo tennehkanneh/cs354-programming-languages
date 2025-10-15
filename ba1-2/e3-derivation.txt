@@ -1,0 +1,71 @@
+RIGHT SHIFT: >>
+
+expr    : term shift expr
+        | expr add_op term
+        | term
+
+term    : term mult_op factor
+        | factor
+
+factor  : id
+        | number
+        | ’-’ factor
+        | ’(’ expr ’)’
+
+shift   : ">>"
+        | "<<"
+
+add_op  : ’+’
+        | ’-’
+
+mult_op : ’*’
+        | ’/’
+
+
+
+
+expr : expr add_op term
+2 | term
+3 term : term mult_op factor
+4 | factor
+5 factor : id
+6 | number
+7 | ’-’ factor
+8 | ’(’ expr ’)’
+9 add_op : ’+’
+10 | ’-’
+11 mult_op : ’*’
+12 | ’/’
+
+
+LEFT SHIFT: <<<
+
+
+expr    : expr shif
+expr    : expr add_op term
+        | term
+
+term    : term mult_op factor
+        | factor
+factor  : id
+        | number
+        | ’-’ factor
+        | ’(’ expr ’)’
+
+add_op  : ’+’
+        | ’-’
+
+mult_op : ’*’
+        | ’/’
+
+
+As in lecture, draw a parse tree, and give a (textual) derivation, for each
+of the strings: -x*2 and -(x*-2).
+3. Suppose we want to augment the arithmetic-expression CFG, from above,
+with arithmetic-shift operators, like those found in Java, C, and C++
+(viz., << and >>. They are binary infix operators, with low precedence.
+For example, 1+2<<3 evaluates to 24.
+Give two augmented CFGs, with the new shift operators. One should
+enforce left associativity; the other, right. Then, draw two parse trees,
+for a single string, demonstrating that the associativity direction for these
+operators is significant.

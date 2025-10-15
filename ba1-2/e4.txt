@@ -1,0 +1,17 @@
+(a) What would be the symptom(s) of executing these command lines in
+the wrong order?
+
+
+
+
+(b) How does Make determine the order in which these tool executions
+should occur?
+
+        A Make file will determines what needs to happen first based on the targets, dependencies and rules.
+        
+
+
+(c) How could Make’s algorithm be undermined, thereby causing those
+symptom(s)?
+
+        
